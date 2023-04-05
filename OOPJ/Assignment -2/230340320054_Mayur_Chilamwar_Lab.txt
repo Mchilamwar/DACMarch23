@@ -1,0 +1,180 @@
+Name:- Mayur Chilamwar
+PNR:- 230340320054
+
+lab Date :- 03/04/23
+___________________________________________________________________
+___________________________________________________________________\
+
+// ASSIGNMENT 2 Problem no 1
+
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Scanner;
+class DateFormat{
+    public static void main(String[] args) throws Exception{
+
+        SimpleDateFormat Sd=new SimpleDateFormat("dd/MM/yyyy");
+
+        Scanner sc=new Scanner(System.in);
+
+        int day;
+        int month;
+        int year;
+
+        System.out.println("Enter the Day dd :");
+        day=sc.nextInt();
+        System.out.println("Enter the Month mm :");
+        month=sc.nextInt();
+        System.out.println("Enter the Year yyyy :");
+        year=sc.nextInt();
+        
+
+        String date=day+"/"+month+"/"+year;
+
+        Date D=Sd.parse(date);
+
+
+        // System.out.println(D.getYear()+1900);
+
+        // Date date = new Date();
+        //SimpleDateFormat sdf = new SimpleDateFormat( "dd-MM-yyyy");
+        //SimpleDateFormat sdf = new SimpleDateFormat( "dd/MMM/yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat( "yyyyy.MMMMM.dd GGG hh:mm aaa");
+        String strDate = sdf.format(D);
+        System.out.println( strDate );
+
+       
+       
+        
+
+   
+   
+   
+    //     System.out.println(cal.get(cal.DATE));
+    //   System.out.println(cal.getTime());
+
+
+    }
+}
+
+
+___________________________________________________________________
+___________________________________________________________________
+
+Name:- Mayur Chilamwar
+PNR:- 230340320054
+
+lab Date :- 04/04/23
+___________________________________________________________________
+___________________________________________________________________
+
+// Packages
+
+
+-----------------------------------------------
+package pack.src;
+
+public class Base_pack {
+    private int num1;
+    private int num2;
+
+    public Base_pack()
+    {
+        this(0,0);
+    }
+
+    public Base_pack(int num1,int num2){
+        this.num1=num1;
+        this.num2=num2;
+    }
+
+    public void sum(){
+        System.out.println("Sum is = "+(this.num1+this.nm2));
+    }
+
+}
+
+--------------------------------------------------
+package pack.src;
+
+public class Implement {
+public static void main(String[] args) {
+    
+
+    Base_pack base=new Base_pack(10,10);
+
+    base.sum();
+
+}
+
+
+
+
+
+
+}
+-----------------------------------
+//// Singleton Class Implementation
+
+-----------------------------------
+
+package Singletone;
+
+
+class Single{
+	
+	private int a;
+	private int b;
+	private static Single s=null;
+	
+//	{
+//		s=null;
+//	}
+//	
+	private Single() {
+	
+		this.a=0;
+		this.b=0;
+		
+	}
+	
+	
+	public void getVars() {
+		System.out.println(a+" "+b);
+	}
+	
+	public static Single getInstance() {
+		
+		if(s==null)
+			{s=new Single();
+			return s;}
+		else 
+			return s;
+		
+	}
+	
+	
+	
+	
+}
+
+public class Single_Ton{
+	
+	public static void main(String[] args) {
+		Single s = Single.getInstance();
+		
+		s.getVars();
+		
+		System.out.println(s);// Hashcode of first instance
+		
+		s=Single.getInstance();
+		
+		System.out.println(s);//Hashcode of Second Instance
+	}
+	
+}
+
+
+
+
+
